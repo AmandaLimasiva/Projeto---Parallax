@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Lune</title>
+</head>
+<body>
+    <header>
+        <a href ='#' class="logo">Lune</a>
+        <ul>
+            <li><a href="#" class="active">Ínicio</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="/images/stars.png" id="estrelas" alt="Estrelas">
+        <img src="/images/moon.png" id="lua" alt="Lua">
+        <img src="/images/mountains_behind.png" id="montanha_atras" alt="Montanhas_atras">
+        <!--<h2 id="text">Lune</h2>-->
+        <a href="#sec" id="btn">Explorar</a>
+        <img src="/images/mountains_front.png" id="montanha_frente" alt="Montanhas_frente">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p><br><br>
+    </div>
+    <script>
+        let lua = document.getElementById('lua');
+        let estrelas = document.getElementById('estrelas');
+        let montanha_atras = document.getElementById('montanha_atras');
+        let texto = document.getElementById('text');
+        let botao = document.getElementById('btn');
+        let montanha_frente = document.getElementById('montanha_frente');
+    
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            estrelas.style.left = value  * 0.25 + 'px';
+            lua.style.top = value  * 1.05 + 'px';
+            montanha_atras.style.top = value  * 0.05 + 'px';
+            montanha_frente.style.top = value  * 0 + 'px';
+            texto.style.marginRight =  value * 4 + 'px';
+            texto.style.marginTop =  value * 1.5 + 'px';
+          
+        })
+    </script>
+</body>
+</html>
